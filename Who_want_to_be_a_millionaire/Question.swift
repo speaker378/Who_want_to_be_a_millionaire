@@ -24,9 +24,7 @@ struct Answer {
 
 struct Questions {
     
-    private init() {  }
-    
-    static let shared: [Question] = [
+    static let questions: [Question] = [
         Question(
             question: "Кем был мужчина, послуживший моделью для известной картины «Американская готика» Гранта Вуда?",
             answerOptions: [
