@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MenuVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Who_want_to_be_a_millionaire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MenuVC" customModule="Who_want_to_be_a_millionaire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUg-az-5hI">
-                                <rect key="frame" x="97.666666666666686" y="363.33333333333331" width="195" height="42"/>
+                                <rect key="frame" x="58.666666666666657" y="363.33333333333331" width="273" height="42"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="0Os-2h-WkE"/>
@@ -29,9 +29,12 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Играть">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="hLy-dz-NcF" kind="show" identifier="startGameSegue" id="tSc-VN-9d1"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPE-w0-uMa">
-                                <rect key="frame" x="117" y="453.33333333333331" width="156" height="42"/>
+                                <rect key="frame" x="97.666666666666686" y="453.33333333333331" width="195" height="42"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="PvZ-Ii-4uC"/>
@@ -49,17 +52,120 @@
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PUg-az-5hI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5gM-Jf-9i9"/>
-                            <constraint firstItem="HPE-w0-uMa" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="ZyX-0f-DEG"/>
+                            <constraint firstItem="HPE-w0-uMa" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="ZyX-0f-DEG"/>
                             <constraint firstItem="HPE-w0-uMa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aAc-cM-EtY"/>
                             <constraint firstItem="PUg-az-5hI" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="18:20" id="aQF-Kz-QCI"/>
                             <constraint firstItem="HPE-w0-uMa" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="20:18" id="cbz-XX-a87"/>
-                            <constraint firstItem="PUg-az-5hI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="jqT-OM-7AQ"/>
+                            <constraint firstItem="PUg-az-5hI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="jqT-OM-7AQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultsButton" destination="HPE-w0-uMa" id="T4W-7Z-SdT"/>
+                        <outlet property="startGameButton" destination="PUg-az-5hI" id="tZh-Zj-p1Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="20" y="98"/>
+        </scene>
+        <!--GameVC-->
+        <scene sceneID="KsL-zt-oU7">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="hLy-dz-NcF" customClass="GameVC" customModule="Who_want_to_be_a_millionaire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aQO-sO-jz4">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1Ms-d9-i1R">
+                                <rect key="frame" x="19.666666666666657" y="548" width="351" height="218"/>
+                                <subviews>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="353-wk-4LA">
+                                        <rect key="frame" x="0.0" y="0.0" width="351" height="42"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="RXj-T8-xgJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Играть"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="A: Юнг">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALG-DY-ThF">
+                                        <rect key="frame" x="0.0" y="58" width="351" height="42.666666666666657"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Играть"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="B: Гегель">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Due-ZS-66v">
+                                        <rect key="frame" x="0.0" y="116.66666666666664" width="351" height="42.666666666666671"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Играть"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="C: Ницше">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMM-ug-LRV">
+                                        <rect key="frame" x="0.0" y="175.33333333333337" width="351" height="42.666666666666657"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Играть"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="D: Шопенгауэр">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ALG-DY-ThF" firstAttribute="height" secondItem="353-wk-4LA" secondAttribute="height" multiplier="1.01587" id="1PZ-w4-1yU"/>
+                                    <constraint firstItem="Due-ZS-66v" firstAttribute="height" secondItem="353-wk-4LA" secondAttribute="height" multiplier="1.01587" id="NM5-Cn-cWH"/>
+                                    <constraint firstItem="WMM-ug-LRV" firstAttribute="height" secondItem="353-wk-4LA" secondAttribute="height" multiplier="1.01587" id="ZNd-2o-C7a"/>
+                                </constraints>
+                            </stackView>
+                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кто из этих философов в 1864 году написал музыку на стихи А.С. Пушкина «Заклинание» и «Зимний вечер»?" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="q6M-DZ-WLF">
+                                <rect key="frame" x="22" y="64" width="346" height="464"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5yQ-0a-BcS"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Ms-d9-i1R" firstAttribute="bottom" secondItem="5yQ-0a-BcS" secondAttribute="bottom" constant="-44" id="6yc-DD-Z1B"/>
+                            <constraint firstItem="1Ms-d9-i1R" firstAttribute="top" secondItem="q6M-DZ-WLF" secondAttribute="bottom" constant="20" id="8D1-TH-nBS"/>
+                            <constraint firstItem="5yQ-0a-BcS" firstAttribute="trailing" secondItem="q6M-DZ-WLF" secondAttribute="trailing" constant="22" id="8XW-vI-fkR"/>
+                            <constraint firstItem="1Ms-d9-i1R" firstAttribute="width" secondItem="aQO-sO-jz4" secondAttribute="width" multiplier="0.9" id="Zj4-ym-zhp"/>
+                            <constraint firstItem="q6M-DZ-WLF" firstAttribute="top" secondItem="5yQ-0a-BcS" secondAttribute="top" constant="20" id="atL-ow-qv5"/>
+                            <constraint firstItem="1Ms-d9-i1R" firstAttribute="centerX" secondItem="5yQ-0a-BcS" secondAttribute="centerX" id="iTz-Lo-kg9"/>
+                            <constraint firstItem="q6M-DZ-WLF" firstAttribute="leading" secondItem="5yQ-0a-BcS" secondAttribute="leading" constant="22" id="jY6-5v-7Tu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VX8-tu-LE3"/>
+                    <connections>
+                        <outlet property="answerButtonA" destination="353-wk-4LA" id="XdN-Tm-lYq"/>
+                        <outlet property="answerButtonB" destination="ALG-DY-ThF" id="gv2-lg-6Ed"/>
+                        <outlet property="answerButtonC" destination="Due-ZS-66v" id="2ox-dM-5pC"/>
+                        <outlet property="answerButtonD" destination="WMM-ug-LRV" id="8Qe-Xf-UuO"/>
+                        <outlet property="buttonsStack" destination="1Ms-d9-i1R" id="67f-67-49W"/>
+                        <outlet property="questionLabel" destination="q6M-DZ-WLF" id="6od-qA-pZg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UVD-JT-t0w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="788" y="97"/>
         </scene>
     </scenes>
     <resources>

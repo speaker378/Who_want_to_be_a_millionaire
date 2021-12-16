@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		74E2C639276B3209002363B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E2C638276B3209002363B4 /* AppDelegate.swift */; };
 		74E2C63B276B3209002363B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E2C63A276B3209002363B4 /* SceneDelegate.swift */; };
-		74E2C63D276B3209002363B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E2C63C276B3209002363B4 /* ViewController.swift */; };
+		74E2C63D276B3209002363B4 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E2C63C276B3209002363B4 /* MenuVC.swift */; };
 		74E2C640276B3209002363B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E2C63E276B3209002363B4 /* Main.storyboard */; };
 		74E2C642276B3209002363B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74E2C641276B3209002363B4 /* Assets.xcassets */; };
 		74E2C645276B3209002363B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E2C643276B3209002363B4 /* LaunchScreen.storyboard */; };
 		74E2C64D276B36FE002363B4 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E2C64C276B36FE002363B4 /* Question.swift */; };
+		74E2C64F276B60DF002363B4 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E2C64E276B60DF002363B4 /* GameVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		74E2C635276B3209002363B4 /* Who_want_to_be_a_millionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Who_want_to_be_a_millionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E2C638276B3209002363B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74E2C63A276B3209002363B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		74E2C63C276B3209002363B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		74E2C63C276B3209002363B4 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		74E2C63F276B3209002363B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74E2C641276B3209002363B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74E2C644276B3209002363B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74E2C646276B3209002363B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74E2C64C276B36FE002363B4 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		74E2C64E276B60DF002363B4 /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +62,12 @@
 			children = (
 				74E2C638276B3209002363B4 /* AppDelegate.swift */,
 				74E2C63A276B3209002363B4 /* SceneDelegate.swift */,
+				74E2C63C276B3209002363B4 /* MenuVC.swift */,
+				74E2C64E276B60DF002363B4 /* GameVC.swift */,
 				74E2C64C276B36FE002363B4 /* Question.swift */,
-				74E2C63C276B3209002363B4 /* ViewController.swift */,
 				74E2C63E276B3209002363B4 /* Main.storyboard */,
-				74E2C641276B3209002363B4 /* Assets.xcassets */,
 				74E2C643276B3209002363B4 /* LaunchScreen.storyboard */,
+				74E2C641276B3209002363B4 /* Assets.xcassets */,
 				74E2C646276B3209002363B4 /* Info.plist */,
 			);
 			path = Who_want_to_be_a_millionaire;
@@ -141,9 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74E2C63D276B3209002363B4 /* ViewController.swift in Sources */,
+				74E2C63D276B3209002363B4 /* MenuVC.swift in Sources */,
 				74E2C64D276B36FE002363B4 /* Question.swift in Sources */,
 				74E2C639276B3209002363B4 /* AppDelegate.swift in Sources */,
+				74E2C64F276B60DF002363B4 /* GameVC.swift in Sources */,
 				74E2C63B276B3209002363B4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
