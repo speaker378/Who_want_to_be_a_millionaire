@@ -90,7 +90,7 @@ class GameVC: UIViewController {
     }
     
     private func endGame() {
-        let record = Record(counterOfCorrectAnswers: session.allQuestionsCount, allQuestionsCount: session.counterOfCorrectAnswers)
+        let record = Record(counterOfCorrectAnswers: session.counterOfCorrectAnswers, allQuestionsCount: session.allQuestionsCount)
         Game.shared.saveRecord(record)
         Game.shared.session = nil
         self.dismiss(animated: true, completion: nil)

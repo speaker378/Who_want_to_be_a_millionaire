@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct Record {
+struct Record: Codable {
     var counterOfCorrectAnswers: Int
     var allQuestionsCount: Int
+    var percent: Float {
+        (Float(self.counterOfCorrectAnswers) / Float(self.allQuestionsCount) * 100).rounded()
+        
+    }
 }
