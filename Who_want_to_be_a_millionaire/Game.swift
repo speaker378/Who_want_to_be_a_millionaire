@@ -9,7 +9,13 @@ import Foundation
 
 final class Game {
     static let shared = Game()
+    
     var session: GameSession?
+    var records: [Record] = []
     
     private init() { }
+    
+    func saveRecord(_ record: Record) {
+        self.records.append(record)
+    }
 }

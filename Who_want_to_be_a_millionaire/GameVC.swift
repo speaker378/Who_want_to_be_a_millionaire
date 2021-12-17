@@ -16,6 +16,7 @@ class GameVC: UIViewController {
     @IBOutlet weak var answerButtonC: UIButton!
     @IBOutlet weak var answerButtonD: UIButton!
     
+    let session = GameSession()
     let questions = Questions.questions
     var questionNumber = 0
     var truth = ""
@@ -29,7 +30,6 @@ class GameVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let session = GameSession()
         session.gameVCDelegate = self
         Game.shared.session = session
         
@@ -90,6 +90,9 @@ class GameVC: UIViewController {
     }
     
     private func endGame() {
+        let record = Record(counterOfCorrectAnswers: session.allQuestionsCount, allQuestionsCount: session.counterOfCorrectAnswers)
+        Game.shared.saveRecord(record)
+        Game.shared.session = nil
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -97,10 +100,10 @@ class GameVC: UIViewController {
 
 extension GameVC: GameVCDelegate {
     func scorePoints(_ points: Int = 1) {
-        Game.shared.session?.counterOfCorrectAnswers += points
+        session.counterOfCorrectAnswers += points
     }
     
     func setAllQuestionsCount(_ count: Int) {
-        Game.shared.session?.allQuestionsCount = count
+        session.allQuestionsCount = count
     }
 }
