@@ -51,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74754FD7276D11440028268E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				74E2C63C276B3209002363B4 /* MenuVC.swift */,
+				74E2C64E276B60DF002363B4 /* GameVC.swift */,
+				74754FD5276D08B00028268E /* RecordsVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		74E2C62C276B3208002363B4 = {
 			isa = PBXGroup;
 			children = (
@@ -72,9 +82,7 @@
 			children = (
 				74E2C638276B3209002363B4 /* AppDelegate.swift */,
 				74E2C63A276B3209002363B4 /* SceneDelegate.swift */,
-				74E2C63C276B3209002363B4 /* MenuVC.swift */,
-				74E2C64E276B60DF002363B4 /* GameVC.swift */,
-				74754FD5276D08B00028268E /* RecordsVC.swift */,
+				74754FD7276D11440028268E /* ViewControllers */,
 				74754FD3276D06480028268E /* RecordsCaretaker.swift */,
 				74E2C650276B98EF002363B4 /* Game.swift */,
 				74754FD1276D02070028268E /* Record.swift */,
