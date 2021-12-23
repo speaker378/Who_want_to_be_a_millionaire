@@ -10,23 +10,13 @@ import UIKit
 class MenuVC: UIViewController {
     @IBOutlet weak var startGameButton: UIButton!
     @IBOutlet weak var resultsButton: UIButton!
-    @IBOutlet weak var difficultyControl: UISegmentedControl!
-    
-    private var selectedDifficulty: Difficulty {
-        switch self.difficultyControl.selectedSegmentIndex {
-        case 0:
-            return .easy
-        case 1:
-            return .hard
-        default:
-            return .easy
-        }
-    }
+    @IBOutlet weak var buttonStack: UIStackView!
     
     override func loadView() {
         super.loadView()
-        startGameButton.layer.cornerRadius = startGameButton.bounds.height / 4
-        resultsButton.layer.cornerRadius = resultsButton.bounds.height / 4
+        buttonStack.subviews.forEach { view in
+            view.layer.cornerRadius = view.bounds.height / 4
+        }
     }
     
     override func viewDidLoad() {
@@ -37,7 +27,7 @@ class MenuVC: UIViewController {
         switch segue.identifier {
         case "startGameSegue":
             guard let gameVC = segue.destination as? GameVC else { return }
-            gameVC.difficulty = self.selectedDifficulty
+            gameVC.difficulty = Game.shared.difficulty
         default:
             break
         }

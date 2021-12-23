@@ -12,6 +12,8 @@ final class Game {
     
     var session: GameSession?
     
+    var difficulty: Difficulty = .easy
+    
     private let recordsCaretaker = RecordsCaretaker()
     
     private(set) var records: [Record] {

@@ -16,64 +16,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUg-az-5hI">
-                                <rect key="frame" x="58.666666666666657" y="363.33333333333331" width="273" height="42"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="XM3-Yv-71K">
+                                <rect key="frame" x="0.0" y="332" width="390" height="190"/>
+                                <subviews>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUg-az-5hI">
+                                        <rect key="frame" x="31.666666666666657" y="0.0" width="326.66666666666674" height="42"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="0Os-2h-WkE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Играть"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Играть">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="hLy-dz-NcF" kind="show" identifier="startGameSegue" id="tSc-VN-9d1"/>
+                                        </connections>
+                                    </button>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPE-w0-uMa">
+                                        <rect key="frame" x="78.333333333333329" y="74" width="233.33333333333337" height="42"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="PvZ-Ii-4uC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Играть"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Результаты">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="rCQ-vs-3bE" kind="show" identifier="showRecordsSegue" id="6Xv-q3-NpH"/>
+                                        </connections>
+                                    </button>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3FX-XJ-5Y8">
+                                        <rect key="frame" x="78.333333333333329" y="148" width="233.33333333333337" height="42"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="ajw-Vs-CIp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Играть"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Настройки">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="Lmq-s8-1vO" kind="show" identifier="settingsSegue" id="9WV-PK-7gl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="0Os-2h-WkE"/>
+                                    <constraint firstItem="HPE-w0-uMa" firstAttribute="width" secondItem="XM3-Yv-71K" secondAttribute="width" multiplier="0.5" constant="38.5" id="dfJ-ie-Y5H"/>
+                                    <constraint firstItem="PUg-az-5hI" firstAttribute="width" secondItem="XM3-Yv-71K" secondAttribute="width" multiplier="0.7" constant="53.900000000000006" id="ncJ-zr-quw"/>
+                                    <constraint firstItem="3FX-XJ-5Y8" firstAttribute="width" secondItem="HPE-w0-uMa" secondAttribute="width" id="vlk-Qx-IT3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Играть"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Играть">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="hLy-dz-NcF" kind="show" identifier="startGameSegue" id="tSc-VN-9d1"/>
-                                </connections>
-                            </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPE-w0-uMa">
-                                <rect key="frame" x="97.666666666666686" y="453.33333333333331" width="195" height="42"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="PvZ-Ii-4uC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Играть"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Результаты">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="rCQ-vs-3bE" kind="show" identifier="showRecordsSegue" id="6Xv-q3-NpH"/>
-                                </connections>
-                            </button>
-                            <segmentedControl contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1qW-xc-mCc">
-                                <rect key="frame" x="28" y="124" width="334" height="32"/>
-                                <segments>
-                                    <segment title="Легко"/>
-                                    <segment title="Сложно"/>
-                                </segments>
-                                <color key="selectedSegmentTintColor" systemColor="systemYellowColor"/>
-                            </segmentedControl>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="PUg-az-5hI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5gM-Jf-9i9"/>
-                            <constraint firstItem="1qW-xc-mCc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JEI-nD-y34"/>
-                            <constraint firstItem="HPE-w0-uMa" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="ZyX-0f-DEG"/>
-                            <constraint firstItem="HPE-w0-uMa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aAc-cM-EtY"/>
-                            <constraint firstItem="PUg-az-5hI" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="18:20" id="aQF-Kz-QCI"/>
-                            <constraint firstItem="HPE-w0-uMa" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="20:18" id="cbz-XX-a87"/>
-                            <constraint firstItem="1qW-xc-mCc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="cpT-SY-DGB"/>
-                            <constraint firstItem="PUg-az-5hI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="jqT-OM-7AQ"/>
-                            <constraint firstItem="1qW-xc-mCc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="r5Y-qa-1Pc"/>
+                            <constraint firstItem="XM3-Yv-71K" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="VdD-qT-AIg"/>
+                            <constraint firstItem="XM3-Yv-71K" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ykT-Sx-HMR"/>
+                            <constraint firstItem="XM3-Yv-71K" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yrB-cX-X8C"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonStack" destination="XM3-Yv-71K" id="uPL-fL-kom"/>
                         <outlet property="difficultyControl" destination="1qW-xc-mCc" id="kT9-6H-WrU"/>
                         <outlet property="resultsButton" destination="HPE-w0-uMa" id="T4W-7Z-SdT"/>
                         <outlet property="startGameButton" destination="PUg-az-5hI" id="tZh-Zj-p1Q"/>
@@ -81,7 +95,50 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="98"/>
+            <point key="canvasLocation" x="-237" y="272"/>
+        </scene>
+        <!--SettingsVC-->
+        <scene sceneID="a30-YY-Nqj">
+            <objects>
+                <viewController id="Lmq-s8-1vO" customClass="SettingsVC" customModule="Who_want_to_be_a_millionaire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aby-m3-KF7">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1qW-xc-mCc">
+                                <rect key="frame" x="64" y="128" width="262" height="32"/>
+                                <segments>
+                                    <segment title="Прямая"/>
+                                    <segment title="Вперемешку"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" systemColor="systemYellowColor"/>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Последовательность вопросов" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVh-GQ-lYt">
+                                <rect key="frame" x="64" y="89" width="262" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XAT-UM-eQv"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1qW-xc-mCc" firstAttribute="centerX" secondItem="XAT-UM-eQv" secondAttribute="centerX" id="G0b-GM-X21"/>
+                            <constraint firstItem="1qW-xc-mCc" firstAttribute="top" secondItem="VVh-GQ-lYt" secondAttribute="bottom" constant="18" id="GSg-mL-enG"/>
+                            <constraint firstItem="1qW-xc-mCc" firstAttribute="leading" secondItem="XAT-UM-eQv" secondAttribute="leading" constant="64" id="N0v-na-un8"/>
+                            <constraint firstItem="1qW-xc-mCc" firstAttribute="top" secondItem="XAT-UM-eQv" secondAttribute="top" constant="128" id="nKG-4A-7aQ"/>
+                            <constraint firstItem="VVh-GQ-lYt" firstAttribute="centerX" secondItem="1qW-xc-mCc" secondAttribute="centerX" id="rZC-Eh-D2B"/>
+                            <constraint firstItem="VVh-GQ-lYt" firstAttribute="width" secondItem="1qW-xc-mCc" secondAttribute="width" id="tb7-rh-PBM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wMg-vJ-ZNG"/>
+                    <connections>
+                        <outlet property="difficultyControl" destination="1qW-xc-mCc" id="fLR-dr-Gqz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qhj-85-8nu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="702" y="831"/>
         </scene>
         <!--RecordsVC-->
         <scene sceneID="bAX-4F-ztB">
@@ -113,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSg-A4-17N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900" y="441"/>
+            <point key="canvasLocation" x="702" y="182"/>
         </scene>
         <!--GameVC-->
         <scene sceneID="KsL-zt-oU7">
@@ -212,7 +269,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVD-JT-t0w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900" y="-262"/>
+            <point key="canvasLocation" x="702" y="-470"/>
         </scene>
     </scenes>
     <resources>
