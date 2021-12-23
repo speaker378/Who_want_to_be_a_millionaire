@@ -10,6 +10,18 @@ import UIKit
 class MenuVC: UIViewController {
     @IBOutlet weak var startGameButton: UIButton!
     @IBOutlet weak var resultsButton: UIButton!
+    @IBOutlet weak var difficultyControl: UISegmentedControl!
+    
+    private var selectedDifficulty: Difficulty {
+        switch self.difficultyControl.selectedSegmentIndex {
+        case 0:
+            return .easy
+        case 1:
+            return .hard
+        default:
+            return .easy
+        }
+    }
     
     override func loadView() {
         super.loadView()
@@ -19,6 +31,16 @@ class MenuVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "startGameSegue":
+            guard let gameVC = segue.destination as? GameVC else { return }
+            gameVC.difficulty = self.selectedDifficulty
+        default:
+            break
+        }
     }
 
 

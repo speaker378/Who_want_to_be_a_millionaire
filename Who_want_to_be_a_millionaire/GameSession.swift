@@ -13,8 +13,12 @@ protocol GameVCDelegate: AnyObject {
 }
 
 class GameSession {
-    
+    let orderOfQuestions: OrderOfQuestionsStrategy
     weak var gameVCDelegate: GameVCDelegate?
+    
+    init(orderOfQuestions: OrderOfQuestionsStrategy) {
+        self.orderOfQuestions = orderOfQuestions
+    }
     
     var counterOfCorrectAnswers: Int = 0
     var allQuestionsCount: Int = 0

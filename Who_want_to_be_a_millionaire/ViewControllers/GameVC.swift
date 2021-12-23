@@ -16,10 +16,22 @@ class GameVC: UIViewController {
     @IBOutlet weak var answerButtonC: UIButton!
     @IBOutlet weak var answerButtonD: UIButton!
     
-    let session = GameSession()
-    let questions = Questions.questions
+    var questions: [Question]!
+    var session: GameSession!
     var questionNumber = 0
-    var truth = ""
+    var truth: String!
+    var difficulty: Difficulty!
+    
+    private var createQuestionsStrategy: OrderOfQuestionsStrategy {
+        switch self.difficulty {
+        case .easy:
+            return DirectOrder()
+        case .hard:
+            return RandomQuestions()
+        case .none:
+            return DirectOrder()
+        }
+    }
     
     override func loadView() {
         super.loadView()
@@ -30,8 +42,10 @@ class GameVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        session = GameSession(orderOfQuestions: createQuestionsStrategy)
         session.gameVCDelegate = self
         Game.shared.session = session
+        questions = session.orderOfQuestions.orderOfQuestions(questions: testQuestions)
         
         setAllQuestionsCount(questions.count)
         setActionForButtons()

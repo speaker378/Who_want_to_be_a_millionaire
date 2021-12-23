@@ -50,19 +50,31 @@
                                     <segue destination="rCQ-vs-3bE" kind="show" identifier="showRecordsSegue" id="6Xv-q3-NpH"/>
                                 </connections>
                             </button>
+                            <segmentedControl contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1qW-xc-mCc">
+                                <rect key="frame" x="28" y="124" width="334" height="32"/>
+                                <segments>
+                                    <segment title="Легко"/>
+                                    <segment title="Сложно"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" systemColor="systemYellowColor"/>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PUg-az-5hI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5gM-Jf-9i9"/>
+                            <constraint firstItem="1qW-xc-mCc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JEI-nD-y34"/>
                             <constraint firstItem="HPE-w0-uMa" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="ZyX-0f-DEG"/>
                             <constraint firstItem="HPE-w0-uMa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aAc-cM-EtY"/>
                             <constraint firstItem="PUg-az-5hI" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="18:20" id="aQF-Kz-QCI"/>
                             <constraint firstItem="HPE-w0-uMa" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="20:18" id="cbz-XX-a87"/>
+                            <constraint firstItem="1qW-xc-mCc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="cpT-SY-DGB"/>
                             <constraint firstItem="PUg-az-5hI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="jqT-OM-7AQ"/>
+                            <constraint firstItem="1qW-xc-mCc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="r5Y-qa-1Pc"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="difficultyControl" destination="1qW-xc-mCc" id="kT9-6H-WrU"/>
                         <outlet property="resultsButton" destination="HPE-w0-uMa" id="T4W-7Z-SdT"/>
                         <outlet property="startGameButton" destination="PUg-az-5hI" id="tZh-Zj-p1Q"/>
                     </connections>
