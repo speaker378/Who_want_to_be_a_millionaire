@@ -13,6 +13,7 @@
 		7483831527745FF8001D69C7 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483831427745FF8001D69C7 /* Difficulty.swift */; };
 		748383172774651F001D69C7 /* OrderOfQuestionsStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748383162774651F001D69C7 /* OrderOfQuestionsStrategy.swift */; };
 		7483831927747EFA001D69C7 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483831827747EFA001D69C7 /* SettingsVC.swift */; };
+		7483831B277489F4001D69C7 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483831A277489F4001D69C7 /* Observable.swift */; };
 		74E2C639276B3209002363B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E2C638276B3209002363B4 /* AppDelegate.swift */; };
 		74E2C63B276B3209002363B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E2C63A276B3209002363B4 /* SceneDelegate.swift */; };
 		74E2C63D276B3209002363B4 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E2C63C276B3209002363B4 /* MenuVC.swift */; };
@@ -32,6 +33,7 @@
 		7483831427745FF8001D69C7 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Difficulty.swift; path = Who_want_to_be_a_millionaire/Difficulty.swift; sourceTree = SOURCE_ROOT; };
 		748383162774651F001D69C7 /* OrderOfQuestionsStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderOfQuestionsStrategy.swift; sourceTree = "<group>"; };
 		7483831827747EFA001D69C7 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		7483831A277489F4001D69C7 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		74E2C635276B3209002363B4 /* Who_want_to_be_a_millionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Who_want_to_be_a_millionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E2C638276B3209002363B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74E2C63A276B3209002363B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				74754FD7276D11440028268E /* ViewControllers */,
 				74754FD3276D06480028268E /* RecordsCaretaker.swift */,
 				7483831427745FF8001D69C7 /* Difficulty.swift */,
+				7483831A277489F4001D69C7 /* Observable.swift */,
 				748383162774651F001D69C7 /* OrderOfQuestionsStrategy.swift */,
 				74E2C650276B98EF002363B4 /* Game.swift */,
 				74754FD1276D02070028268E /* Record.swift */,
@@ -186,6 +189,7 @@
 				74E2C64D276B36FE002363B4 /* Question.swift in Sources */,
 				74E2C639276B3209002363B4 /* AppDelegate.swift in Sources */,
 				74E2C653276B98F8002363B4 /* GameSession.swift in Sources */,
+				7483831B277489F4001D69C7 /* Observable.swift in Sources */,
 				74E2C64F276B60DF002363B4 /* GameVC.swift in Sources */,
 				74E2C63B276B3209002363B4 /* SceneDelegate.swift in Sources */,
 				74754FD6276D08B00028268E /* RecordsVC.swift in Sources */,

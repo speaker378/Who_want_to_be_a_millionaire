@@ -20,7 +20,11 @@ class GameSession {
         self.orderOfQuestions = orderOfQuestions
     }
     
-    var counterOfCorrectAnswers: Int = 0
-    var allQuestionsCount: Int = 0
+    var numberQuestion = Observable<Int>(0)
+    var points = 0
+    var allQuestionsCount = 0
+    var percentageProgress: Float {
+        (Float(self.numberQuestion.value) / Float(self.allQuestionsCount) * 100).rounded()
+    }
     
 }
