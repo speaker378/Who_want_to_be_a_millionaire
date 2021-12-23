@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Question {
+struct Question: Codable {
     let question: String
     let answerOptions: [Answer]
 }
 
-struct Answer {
+struct Answer: Codable {
     let text: String
-    let truth: Bool
+    var truth: Bool
     
     init(_ text: String, _ truth: Bool = false) {
         self.text = text
