@@ -9,6 +9,7 @@ import UIKit
 
 class GameVC: UIViewController {
     
+    @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var buttonsStack: UIStackView!
     @IBOutlet weak var answerButtonA: UIButton!
@@ -16,10 +17,21 @@ class GameVC: UIViewController {
     @IBOutlet weak var answerButtonC: UIButton!
     @IBOutlet weak var answerButtonD: UIButton!
     
-    let session = GameSession()
-    let questions = Questions.questions
-    var questionNumber = 0
-    var truth = ""
+    var questions: [Question]!
+    var session: GameSession!
+    var truth: String!
+    var difficulty: Difficulty!
+    
+    private var createQuestionsStrategy: OrderOfQuestionsStrategy {
+        switch self.difficulty {
+        case .easy:
+            return DirectOrder()
+        case .hard:
+            return RandomQuestions()
+        case .none:
+            return DirectOrder()
+        }
+    }
     
     override func loadView() {
         super.loadView()
@@ -30,14 +42,27 @@ class GameVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        session = GameSession(orderOfQuestions: createQuestionsStrategy)
         session.gameVCDelegate = self
         Game.shared.session = session
+        questions = session.orderOfQuestions.orderOfQuestions(questions: testQuestions)
+        
+        session.numberQuestion.addObserver(self,
+                                        options: [.new, .initial],
+                                        closure: { [weak self] (numberQuestion, _) in
+            var percent: Float = 0
+            if self?.session.percentageProgress.isNaN == false {
+                percent = (self?.session.percentageProgress)!
+                
+            }
+            self?.progressLabel.text = "Прогресс: \(numberQuestion) (\(percent)%)" }
+        )
         
         setAllQuestionsCount(questions.count)
         setActionForButtons()
-        setTextQuestion(questionNumber)
-        setTextForButtons(questionNumber)
-        setTruth(questionNumber)
+        setTextQuestion(session.numberQuestion.value)
+        setTextForButtons(session.numberQuestion.value)
+        setTruth(session.numberQuestion.value)
     }
     
     private func setTextQuestion(_ questionNumber: Int) {
@@ -82,15 +107,15 @@ class GameVC: UIViewController {
     }
     
     private func nextQuestions() {
-        questionNumber += 1
-        guard questionNumber < questions.count else { endGame(); return }
-        setTextQuestion(questionNumber)
-        setTextForButtons(questionNumber)
-        setTruth(questionNumber)
+        session.numberQuestion.value += 1
+        guard session.numberQuestion.value < questions.count else { endGame(); return }
+        setTextQuestion(session.numberQuestion.value)
+        setTextForButtons(session.numberQuestion.value)
+        setTruth(session.numberQuestion.value)
     }
     
     private func endGame() {
-        let record = Record(counterOfCorrectAnswers: session.counterOfCorrectAnswers, allQuestionsCount: session.allQuestionsCount)
+        let record = Record(counterOfCorrectAnswers: session.numberQuestion.value, allQuestionsCount: session.allQuestionsCount)
         Game.shared.saveRecord(record)
         Game.shared.session = nil
         self.dismiss(animated: true, completion: nil)
@@ -100,7 +125,7 @@ class GameVC: UIViewController {
 
 extension GameVC: GameVCDelegate {
     func scorePoints(_ points: Int = 1) {
-        session.counterOfCorrectAnswers += points
+        session.points += points
     }
     
     func setAllQuestionsCount(_ count: Int) {

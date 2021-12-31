@@ -13,10 +13,18 @@ protocol GameVCDelegate: AnyObject {
 }
 
 class GameSession {
-    
+    let orderOfQuestions: OrderOfQuestionsStrategy
     weak var gameVCDelegate: GameVCDelegate?
     
-    var counterOfCorrectAnswers: Int = 0
-    var allQuestionsCount: Int = 0
+    init(orderOfQuestions: OrderOfQuestionsStrategy) {
+        self.orderOfQuestions = orderOfQuestions
+    }
+    
+    var numberQuestion = Observable<Int>(0)
+    var points = 0
+    var allQuestionsCount = 0
+    var percentageProgress: Float {
+        (Float(self.numberQuestion.value) / Float(self.allQuestionsCount) * 100).rounded()
+    }
     
 }

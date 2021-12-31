@@ -10,15 +10,27 @@ import UIKit
 class MenuVC: UIViewController {
     @IBOutlet weak var startGameButton: UIButton!
     @IBOutlet weak var resultsButton: UIButton!
+    @IBOutlet weak var buttonStack: UIStackView!
     
     override func loadView() {
         super.loadView()
-        startGameButton.layer.cornerRadius = startGameButton.bounds.height / 4
-        resultsButton.layer.cornerRadius = resultsButton.bounds.height / 4
+        buttonStack.subviews.forEach { view in
+            view.layer.cornerRadius = view.bounds.height / 4
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "startGameSegue":
+            guard let gameVC = segue.destination as? GameVC else { return }
+            gameVC.difficulty = Game.shared.difficulty
+        default:
+            break
+        }
     }
 
 
